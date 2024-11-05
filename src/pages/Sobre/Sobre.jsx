@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Sobre.css';
-import banner from './org.png';
+import banner from './saiba.png';
 import { Link } from 'react-router-dom'; 
 
 
@@ -16,13 +16,13 @@ function Sobre() {
         <br/>
             <div className="container">
                 <div className="btnpreto">
-                <h1 id='title_saibaMais'>Saiba Mais!</h1>
+                {/* <h1 id='title_saibaMais'>Saiba Mais!</h1> */}
                 <br/>
-                <img src={banner} alt="Banner" />
+                <img src={banner} id='imgSobre' alt="Banner" />
             </div>
             </div>
             <br />
-            <p id="title_acordion">SOBRE </p>
+            {/* <p id="title_acordion">SOBRE </p> */}
             <div className="accordion">
                 <div className="accordion-item">
                     <button

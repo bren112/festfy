@@ -6,7 +6,7 @@
     position: relative;
     width: 100%;
     height: 30px; 
-    background-color: var(--ter); 
+    background-color: #b0ff4b; 
 }
 
 .marquee h1 {
@@ -55,7 +55,23 @@
     font-weight: 400;
     font-style: normal;
     font-size: 3.8pc;
+    animation: pulsar 3s ease-in-out infinite;
+
  
+}
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 #logo_home {
     font-family: "Danfo", serif;
@@ -66,8 +82,10 @@
       "ELSH" 0;
     transform: perspective(500px) rotateX(-10deg); /* Ajuste o valor para a curvatura desejada */
     transform-origin: center bottom;
-    color: white;
+    color: #b0ff4b;
     font-size: 5pc;
+    animation: pulsar 3s ease-in-out infinite;
+
 }
 
 
@@ -85,6 +103,9 @@
     border-radius: 1pc;
 }
 
+/* #banner{
+    width: 36pc;
+} */
 .container button {
     width: 13pc;
     height: 3pc;
@@ -159,7 +180,7 @@
     }
 
     .container img {
-        width: 16pc;
+        width: 25pc;
     }
 
     .esq button {
@@ -173,4 +194,7 @@
         font-size: 3.3pc;
       
     }
+    /* #banner{
+        width: 21pc;
+    } */
 }

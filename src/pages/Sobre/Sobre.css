@@ -12,7 +12,11 @@
         opacity: 1;
     }
 }
+#imgSobre{
+    width: 28pc;
+    animation: pulsar 3s ease-in-out infinite;
 
+}
 #title_saibaMais {
     font-family: "Danfo", serif;
     color: var(--ter);
