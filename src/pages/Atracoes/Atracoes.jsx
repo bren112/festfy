@@ -24,7 +24,7 @@ function Atracoes() {
         <div className="atracoes">
              <br />
         <h1 id='title'>
-        Jájá Novas Atrações!</h1>
+        JEM BREVE</h1>
             <br/>
             <div className="loading-circle">
                 <div className="circle"></div>
