@@ -9,7 +9,7 @@ function Pagamento() {
     // Definindo a chave PIX predefinida
     const [pix] = useState('488.431.768-89');
     //  Definindo o valor selecionado
-    const [valor, setValor] = useState('35');
+    const [valor, setValor] = useState('25');
     // Estado para o telefone
     const [telefone, setTelefone] = useState('');
     // Estado para controlar o envio do formulário
@@ -132,8 +132,8 @@ function Pagamento() {
                         <div className="campo">
                             <label htmlFor="valor">Valor</label>
                             <select id="valor" name="valor" value={valor} onChange={handleValorChange}>
-                                <option value="35">Valor da Casa (35)</option>
-                                <option value="35">Valor de Fora (35)</option>
+                                <option value="25">Valor da Casa (25)</option>
+                                <option value="25">Valor de Fora (25)</option>
                             </select>
                         </div>
                         <br/>
