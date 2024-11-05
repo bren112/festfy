@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
 import './Home.css';
-import banner from './b.png';
+import banner from './org.png';
 
 function Home() {
     return (
@@ -21,7 +21,7 @@ function Home() {
                 <br />
 
                 <div className="dir">
-                    <img id='banner' src={banner} alt="Banner" />
+                    <img src={banner} alt="Banner" />
                     <Link to="/pagamento">
                         <button>QUERO IR!</button>
                     </Link>

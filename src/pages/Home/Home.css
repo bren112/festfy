@@ -6,7 +6,7 @@
     position: relative;
     width: 100%;
     height: 30px; 
-    background-color: #b0ff4b; 
+    background-color: var(--ter); 
 }
 
 .marquee h1 {
@@ -56,22 +56,7 @@
     font-style: normal;
     font-size: 3.8pc;
     animation: pulsar 3s ease-in-out infinite;
-
  
-}
-@keyframes pulsar {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: scale(1.05);
-        opacity: 0.8;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
 }
 #logo_home {
     font-family: "Danfo", serif;
@@ -82,10 +67,8 @@
       "ELSH" 0;
     transform: perspective(500px) rotateX(-10deg); /* Ajuste o valor para a curvatura desejada */
     transform-origin: center bottom;
-    color: #b0ff4b;
+    color: white;
     font-size: 5pc;
-    animation: pulsar 3s ease-in-out infinite;
-
 }
 
 
@@ -99,13 +82,11 @@
 }
 
 .container img {
-    width: 19pc;
+    width: 22pc;
     border-radius: 1pc;
+    animation: pulsar 3s ease-in-out infinite;
 }
 
-/* #banner{
-    width: 36pc;
-} */
 .container button {
     width: 13pc;
     height: 3pc;
@@ -148,6 +129,20 @@
 .dir button {
     display: block;
 }
+@keyframes pulsar {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 
 @media (max-width: 600px) {
     .marquee {
@@ -180,7 +175,7 @@
     }
 
     .container img {
-        width: 25pc;
+        width: 16pc;
     }
 
     .esq button {
@@ -194,7 +189,4 @@
         font-size: 3.3pc;
       
     }
-    /* #banner{
-        width: 21pc;
-    } */
 }
