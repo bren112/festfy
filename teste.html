@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compartilhar Notícia</title>
+</head>
+<body>
+    <article>
+        <h2 id="tituloNoticia">Notícia Importante de Última Hora</h2>
+        <p id="descricaoNoticia">Essa é uma descrição breve da notícia, dando uma ideia do conteúdo antes de clicar para ler mais.</p>
+        <img id="imagemNoticia" src="https://via.placeholder.com/600x300" alt="Imagem da Notícia" width="600" height="300">
+        <p>Leia mais em: <a id="urlNoticia" href="https://exemplo.com/noticia-importante">https://exemplo.com/noticia-importante</a></p>
+        <button onclick="compartilharNoticia()">Compartilhar Notícia</button>
+    </article>
+
+    <script>
+        function compartilharNoticia() {
+            // Obtém os dados da notícia
+            const titulo = document.getElementById("tituloNoticia").innerText;
+            const descricao = document.getElementById("descricaoNoticia").innerText;
+            const url = document.getElementById("urlNoticia").href;
+
+            // Verifica se a API de compartilhamento está disponível
+            if (navigator.share) {
+                navigator.share({
+                    title: titulo,
+                    text: descricao,
+                    url: url
+                })
+                .then(() => console.log("Notícia compartilhada com sucesso!"))
+                .catch((error) => console.error("Erro ao compartilhar:", error));
+            } else {
+                alert("A funcionalidade de compartilhamento não é suportada neste dispositivo.");
+            }
+        }
+    </script>
+</body>
+</html>

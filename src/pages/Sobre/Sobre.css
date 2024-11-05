@@ -12,6 +12,10 @@
         opacity: 1;
     }
 }
+#regra{
+    font-family: "DynaPuff", system-ui;
+
+}
 #imgSobre{
     width: 28pc;
     animation: pulsar 3s ease-in-out infinite;

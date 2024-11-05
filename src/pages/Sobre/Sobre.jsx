@@ -33,7 +33,7 @@ function Sobre() {
                     </button>
                     {activeIndex === 0 && (
                         <div className="accordion-content">
-                            <p>Ir trajado com tema de halloween maquiagens, fantasias, roupas escuras, da forma que preferirem, desde que se enquadre no tema! Uma dica? Ousem na fantasia! <br/> 
+                            <p id='regra'>Ir trajado com tema de halloween maquiagens, fantasias, roupas escuras, da forma que preferirem, desde que se enquadre no tema! Uma dica? Ousem na fantasia! <br/> 
 
                             <br/> 🗓️ 05/10
                             <br/> 🍻 Bar (+18)
