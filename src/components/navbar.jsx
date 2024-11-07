@@ -25,7 +25,8 @@ function Navbar() {
         <li className="nav__item"><Link to="/sobre" className="nav__link">Sobre</Link></li>
         <li className="nav__item"><Link to="/atracoes" className="nav__link">Atrações</Link></li>
         <li className="nav__item"><Link to="/pagamento" className="nav__link">Pagamento</Link></li>
-        {/* <li className="nav__item"><Link to="/teste" className="nav__link">Teste</Link></li> */}
+        <li className="nav__item"><Link to="/teste" className="nav__link">Teste</Link></li>
+        <li className="nav__item"><Link to="/avisos" className="nav__link">Avisos</Link></li>
 
 
     </ul>

@@ -32,20 +32,32 @@ function Sobre() {
                         🚫 Regras
                     </button>
                     {activeIndex === 0 && (
-                        <div className="accordion-content">
-                            <p id='regra'>Ir trajado com tema de halloween maquiagens, fantasias, roupas escuras, da forma que preferirem, desde que se enquadre no tema! Uma dica? Ousem na fantasia! <br/> 
-
-                            <br/> 🗓️ 05/10
-                            <br/> 🍻 Bar (+18)
-                            <br/> ⏰ 21:00h - ????
-                            <br/> 📍(localização exata no dia)
-                            <br/> ____________________________________________________________________
-                            <br/> 
-                            <br/> 📝 QUANTO À LISTA DE CONFIRMADOS:<br/> <br/> 
-
-•Nomes-sem apelidos,<br/>  presença na lista apenas de quem estiver no grupo,<br/>  para manter o controle de público.<br/> Agradecemos!!
-</p>
-                        </div>
+                      <div className="accordion-content">
+                      <p id='regra'>
+                        Sejam todos muito bem-vindos, nossos queridos convidados, à nossa edição de Révellion, e para fazer jus à data, todos deverão ir ao menos com uma peça de roupa branca/clara!!
+                    
+                        <br/> 
+                        🗓️ 28/12
+                        <br/> 
+                        ⏰ 21:00 
+                        <br/> 
+                        📍Santa Rita do Passa Quatro
+                        <br/> 
+                        👔 Uma peça branca/clara
+                        <br/>
+                        ——————————————————
+                        <br/>
+                        Informações básicas‼️
+                        <br/><br/>
+                        
+                        1-) Estamos com o site totalmente autenticado, logo, todas as informações da festa serão divulgadas lá!!!
+                        <br/>
+                        2-) Todos devem fazer o cadastro no momento do pagamento, com nome completo e número de celular.
+                        <br/>
+                        3-) Grupo de whatsapp será utilizado apenas para rodar a lista de confirmados e determinados avisos.
+                      </p>
+                    </div>
+                    
                     )}
                 </div>
                 <div className="accordion-item">

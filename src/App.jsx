@@ -7,7 +7,7 @@ import Sobre from "./pages/Sobre/Sobre";
 import Atracoes from "./pages/Atracoes/Atracoes";
 import Pagamento from "./pages/Pagamento/Pagamento";
 import Teste from "./pages/Test/Test";
-
+import Avisos from "./pages/Avisos/Avisos";
 
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
             <Route path="/atracoes" element={<Atracoes />} />
             <Route path="/pagamento" element={<Pagamento />} />
             <Route path="/teste" element={<Teste />} />
+            <Route path="/avisos" element={<Avisos />} />
           </Routes>
         </div>
         <Footer />
