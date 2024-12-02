@@ -27,9 +27,7 @@ function Atracoes() {
 
     return (
         <div className="atracoes">
-            <br />
-            <h1 id="title">DJ MOI</h1>
-            <br />
+            
             
             {/* Imagem que abre o modal ao ser clicada */}
             <img 
