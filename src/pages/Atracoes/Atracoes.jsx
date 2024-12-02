@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Atracoes.css';
 import djmoi from './moi2.png';
+import barulho from './barulhento.png'
 
 function Atracoes() {
     const [progress, setProgress] = useState(0);
@@ -38,9 +39,16 @@ function Atracoes() {
                 onClick={openModal} 
                 style={{ cursor: 'pointer' }} 
             />
+            <img 
+                id="imgsobre" 
+                src={barulho} 
+                alt="DJ Barulho" 
+                onClick={openModal} 
+                style={{ cursor: 'pointer' }} 
+            />
 
             {/* Modal */}
-            {isModalOpen && (
+            {/* {isModalOpen && (
                 <div className="modal" onClick={closeModal}>
                     <div className="modal-content" onClick={e => e.stopPropagation()}>
                         <img 
@@ -49,8 +57,15 @@ function Atracoes() {
                             style={{ width: '100%', height: 'auto' }} 
                         />
                     </div>
+                    <div className="modal-content" onClick={e => e.stopPropagation()}>
+                        <img 
+                            src={barulho} 
+                            alt="DJ Moi" 
+                            style={{ width: '100%', height: 'auto' }} 
+                        />
+                    </div>
                 </div>
-            )}
+            )} */}
 
             <div className="loading-circle">
                 <div className="circle"></div>
