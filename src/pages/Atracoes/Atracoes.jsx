@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './Atracoes.css';
 import djmoi from './moi2.png';
 import barulho from './barulhento.png'
-
+import palco from './palco.jpeg';
+import paredao from './paredao.jpeg';
+import virtu from './virtu.png'
 function Atracoes() {
     const [progress, setProgress] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controle do modal
@@ -27,7 +29,9 @@ function Atracoes() {
 
     return (
         <div className="atracoes">
-            
+            <br />
+            <h1 id="title">DJ MOI</h1>
+            <br />
             
             {/* Imagem que abre o modal ao ser clicada */}
             <img 
@@ -41,6 +45,27 @@ function Atracoes() {
                 id="imgsobre" 
                 src={barulho} 
                 alt="DJ Barulho" 
+                onClick={openModal} 
+                style={{ cursor: 'pointer' }} 
+            />
+            <img 
+                id="imgsobre" 
+                src={virtu} 
+                alt="DJ Virtu" 
+                onClick={openModal} 
+                style={{ cursor: 'pointer' }} 
+            />
+            <img 
+                id="imgsobre" 
+                src={palco} 
+                alt="Palco" 
+                onClick={openModal} 
+                style={{ cursor: 'pointer' }} 
+            />
+            <img 
+                id="imgsobre" 
+                src={paredao} 
+                alt="Paredao" 
                 onClick={openModal} 
                 style={{ cursor: 'pointer' }} 
             />
