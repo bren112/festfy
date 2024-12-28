@@ -22,8 +22,8 @@ function Home() {
 
                 <div className="dir">
                     <img src={banner} alt="Banner" />
-                    <Link to="/pagamento">
-                        <button>QUERO IR!</button>
+                    <Link to="">
+                        <button>SUSPENSO!</button>
                     </Link>
                 </div>
             </div>
