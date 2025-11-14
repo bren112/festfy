@@ -15,7 +15,7 @@ const Header = () => {
 
         {/* Menu centralizado igual Apple */}
         <nav className="apple-nav">
-          <div className="nav-item">Reveillon da Diretoria</div>
+          <div className="nav-item">FESTFY</div>
         </nav>
       </div>
     </header>
