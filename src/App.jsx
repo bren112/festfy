@@ -198,7 +198,7 @@ const App = () => {
 
           <div className="stat-item">
           <p className="contador notranslate" translate="no">
-          {+{count}}
+          +{String(count)}
         </p>
 
             <p>ingressos vendidos</p>
