@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import logo from './logo.png'
+import logo from './logo.png';
 import Header from './components/Header/Header';
-import lotePromocional from './images/lotePromocional.png'
+import lotePromocional from './images/lotePromocional.png';
 import Modal from "react-modal";
-import dj1 from "./images/dj1.png"
-import dj2 from "./images/dj2.png"
-import atracao from "./images/misterio.png"
-import atracaoDois from "./images/misteriof.png"
+import dj1 from "./images/dj1.png";
+import dj2 from "./images/dj2.png";
+import atracao from "./images/misterio.png";
+import atracaoDois from "./images/misteriof.png";
 import Palco3d from './components/3d/Palco';
 import Footer from './components/Footer/Footer';
-// import About from './components/About/About';
+
 Modal.setAppElement("#root");
+
 const App = () => {
-  const [open, setOpen] = useState(false);
+  const [openAbout, setOpenAbout] = useState(false);
+  const [openMenores, setOpenMenores] = useState(false);
+
   const [count, setCount] = useState(0);
-  const target = 1000; // número final
-  const duration = 3000; // duração da animação em ms
+  const target = 1000;
+  const duration = 3000;
 
   useEffect(() => {
     let start = 0;
@@ -34,227 +37,165 @@ const App = () => {
 
   return (
     <div className="app">
-     <Header /> 
-    
-    <br />
-     <br />
-     <br />
 
-    <div className="logoCenter">
-      <img src={logo} alt="" srcset="" />
-    </div>
+      <Header />
 
+      <br /><br /><br />
+
+      <div className="logoCenter">
+        <img src={logo} alt="" />
+      </div>
+
+      {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-content">
           <h1 className="hero-title">
-           Mais uma festa da Diretoria!  
+            Mais uma festa da Diretoria!
           </h1>
+
           <p className="hero-subtitle">
-          Uma experiência única feita para quem gosta de exclusividade, organização e zero complicação.
+            Uma experiência única feita para quem gosta de exclusividade, organização e zero complicação.
           </p>
+
+          <button className="hero-cta" onClick={() => setOpenAbout(true)}>
+            Sobre esse evento
+          </button>
+
+          {/* MODAL — SOBRE O EVENTO */}
           <Modal
-  isOpen={open}
-  onRequestClose={() => setOpen(false)}
-  shouldCloseOnOverlayClick={true}
-  style={{
-    overlay: {
-      backgroundColor: "rgba(0,0,0,0.5)",
-      backdropFilter: "blur(8px)",
-      WebkitBackdropFilter: "blur(8px)",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      transition: "0.3s ease-in-out",
-      zIndex: 9999
-    },
+            isOpen={openAbout}
+            onRequestClose={() => setOpenAbout(false)}
+            shouldCloseOnOverlayClick={true}
+            style={{
+              overlay: {
+                backgroundColor: "rgba(0,0,0,0.5)",
+                backdropFilter: "blur(8px)",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              },
+              content: {
+                width: "520px",
+                maxWidth: "92%",
+                maxHeight: "75vh",
+                overflowY: "auto",
+                inset: "unset",
+                padding: "0",
+                borderRadius: "22px",
+                border: "1px solid rgba(255,255,255,0.25)",
+                background: "rgba(255,255,255,0.20)",
+                backdropFilter: "blur(30px)",
+                WebkitBackdropFilter: "blur(30px)",
+                boxShadow: "inset 0 0 40px rgba(255,255,255,0.25), inset 0 0 120px rgba(255,255,255,0.08), 0 8px 35px rgba(0,0,0,0.35)",
+              }
+            }}
+          >
 
-    content: {
-      width: "520px",
-      maxWidth: "92%",
-      maxHeight: "75vh",
-      overflowY: "auto",
-      inset: "unset",
-      padding: "0",
-      borderRadius: "22px",
-      border: "1px solid rgba(255,255,255,0.25)",
+            {/* Header Apple Style */}
+            <div style={{ display: "flex", gap: "8px", padding: "14px 18px", borderBottom: "1px solid rgba(255,255,255,0.18)" }}>
+              <div style={{ width: "14px", height: "14px", borderRadius: "50%", background: "#FF5F57" }}></div>
+              <div style={{ width: "14px", height: "14px", borderRadius: "50%", background: "#FFBD2E" }}></div>
+              <div style={{ width: "14px", height: "14px", borderRadius: "50%", background: "#28C840" }}></div>
+            </div>
 
-      /* LIQUID GLASS */
-      background: "rgba(255, 255, 255, 0.22)",
-      backdropFilter: "blur(35px) saturate(180%)",
-      WebkitBackdropFilter: "blur(35px) saturate(180%)",
+            <div style={{ padding: "30px", color: "white" }}>
+              <h2 style={{ textAlign: "center", color: "white", marginBottom: "14px" }}>
+                Sobre este Evento
+              </h2>
 
-      boxShadow:
-        "inset 0 0 40px rgba(255,255,255,0.25), inset 0 0 120px rgba(255,255,255,0.08), 0 8px 35px rgba(0,0,0,0.35)",
-      animation: "modalIn 0.25s ease"
-    }
-  }}
->
-  {/* HEADER COM AS BOLINHAS APPLE */}
-  <div
-    style={{
-      display: "flex",
-      gap: "8px",
-      padding: "14px 18px",
-      borderBottom: "1px solid rgba(255,255,255,0.18)",
-      alignItems: "center"
-    }}
-  >
-    {/* bolinhas */}
-    <div style={{
-      width: "14px",
-      height: "14px",
-      borderRadius: "50%",
-      background: "#FF5F57",
-      boxShadow: "0 0 6px rgba(255,95,87,0.6)"
-    }}></div>
+              <p>
+                Este evento foi planejado para oferecer uma experiência única, segura e organizada — mantendo a tradição das festas da Diretoria.
+                <br /><br />
+                Local: <strong>Divulgado em breve</strong><br />
+                Horário: <strong>A confirmar</strong>
+              </p>
 
-    <div style={{
-      width: "14px",
-      height: "14px",
-      borderRadius: "50%",
-      background: "#FFBD2E",
-      boxShadow: "0 0 6px rgba(255,189,46,0.6)"
-    }}></div>
+              <br />
 
-    <div style={{
-      width: "14px",
-      height: "14px",
-      borderRadius: "50%",
-      background: "#28C840",
-      boxShadow: "0 0 6px rgba(40,200,64,0.6)"
-    }}></div>
-  </div>
+              <h3 style={{ color: "white" }}>Regras Gerais</h3>
+              <ul style={{ listStyle: "disc", paddingLeft: "20px" }}>
+                <li>É proibida a entrada com bebidas.</li>
+                <li>É obrigatória a apresentação de documento com foto.</li>
+                <li>Respeite as orientações da equipe de segurança.</li>
+                <li>Proibido som externo no evento.</li>
+              </ul>
 
-  <div style={{ padding: "30px", color: "white" }}>
-    {/* TITULO BRANCO */}
-    <h2
-      style={{
-        marginBottom: "12px",
-        fontWeight: "700",
-        fontSize: "22px",
-        textAlign: "center",
-        color: "white"
-      }}
-    >
-      Sobre este Evento
-    </h2>
+              <br />
 
-    <p style={{ lineHeight: "1.6", fontSize: "15px" }}>
-      Este evento foi planejado para oferecer uma experiência única, segura e
-      organizada — mantendo a tradição das festas da Diretoria.
-      <br /><br />
-      Local: <strong>Divulgado em breve</strong>.
-      <br />
-      Horário: <strong>A confirmar</strong>.
-    </p>
+              <h3 style={{ color: "white" }}>Menores de Idade</h3>
+              <p>
+                Pessoas menores de 18 anos devem apresentar autorização assinada pelo responsável legal.
+              </p>
 
-    <br />
+              <br />
 
-    <h3 style={{ fontWeight: "600", marginBottom: "8px", color: "white" }}>
-      Regras Gerais
-    </h3>
-
-    <ul style={{ listStyle: "disc", paddingLeft: "20px", lineHeight: "1.6" }}>
-      <li>É proibida a entrada com bebidas.</li>
-      <li>É obrigatória a apresentação de documento com foto.</li>
-      <li>Respeite as orientações da equipe de segurança.</li>
-      <li>Proibido som externo dentro do evento.</li>
-    </ul>
-
-    <br />
-
-    <h3 style={{ fontWeight: "600", marginBottom: "8px", color: "white" }}>
-      Menores de Idade
-    </h3>
-
-    <p style={{ lineHeight: "1.6", fontSize: "15px" }}>
-      Pessoas menores de 18 anos devem apresentar a autorização assinada pelo
-      responsável legal para entrar no evento.
-      <br /><br />
-    
-    </p>
-
-    <br />
-
-    <button
-      onClick={() => setOpen(false)}
-      style={{
-        marginTop: "10px",
-        width: "100%",
-        padding: "14px",
-        borderRadius: "14px",
-        background: "rgba(255, 255, 255, 0.3)",
-        color: "white",
-        fontWeight: "600",
-        border: "none",
-        cursor: "pointer",
-        fontSize: "15px",
-        backdropFilter: "blur(10px)"
-      }}
-    >
-      Fechar
-    </button>
-  </div>
-</Modal>
+              <button
+                onClick={() => setOpenAbout(false)}
+                style={{
+                  width: "100%",
+                  padding: "14px",
+                  background: "rgba(255,255,255,0.25)",
+                  backdropFilter: "blur(8px)",
+                  borderRadius: "14px",
+                  color: "white",
+                  border: "none",
+                  cursor: "pointer",
+                }}
+              >
+                Fechar
+              </button>
+            </div>
+          </Modal>
 
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* STATS */}
       <section className="stats">
         <div className="stats-content">
           <div className="stat-item">
             <h3>2023</h3>
-            
             <p>+2 anos de histórias</p>
           </div>
-          
-         <div className="bank-cards">
-  {/* Lote Promocional */}
-  <div className="bank-card available">
-    <div className="card-header">
-      <span className="circle red"></span>
-      <span className="circle yellow"></span>
-      <span className="circle green"></span>
-    </div>
-    <div className="card-img">
-      <img src={lotePromocional} alt="Lote Promocional" />
-    </div>
-    <span className="card-title">Lote Promocional</span>
-    <div className="card-number">(Disponível)</div>
-    <button className="buy-btn">Comprar</button>
-  </div>
 
-  {/* Primeiro Lote */}
-  <div className="bank-card unavailable">
-    <div className="card-header">
-      <span className="circle red"></span>
-      <span className="circle yellow"></span>
-      <span className="circle green"></span>
-    </div>
-    <div className="card-img">
-      <img src={lotePromocional} alt="Lote Promocional" />
-    </div>
-    <span className="card-title">Primeiro Lote</span>
-    <div className="card-number">(Indisponível)</div>
-  </div>
+          {/* Cards */}
+          <div className="bank-cards">
+            
+            <div className="bank-card available">
+              <div className="card-header">
+                <span className="circle red"></span>
+                <span className="circle yellow"></span>
+                <span className="circle green"></span>
+              </div>
+              <div className="card-img"><img src={lotePromocional} /></div>
+              <span className="card-title">Lote Promocional</span>
+              <div className="card-number">(Disponível)</div>
+              <button className="buy-btn">Comprar</button>
+            </div>
 
-  {/* Segundo Lote */}
-  <div className="bank-card unavailable">
-    <div className="card-header">
-      <span className="circle red"></span>
-      <span className="circle yellow"></span>
-      <span className="circle green"></span>
-    </div>
-    <div className="card-img">
-      <img src={lotePromocional} alt="Lote Promocional" />
-    </div>
-    <span className="card-title">Segundo Lote</span>
-    <div className="card-number">(Indisponível)</div>
-  </div>
-</div>
+            <div className="bank-card unavailable">
+              <div className="card-header">
+                <span className="circle red"></span>
+                <span className="circle yellow"></span>
+                <span className="circle green"></span>
+              </div>
+              <div className="card-img"><img src={lotePromocional} /></div>
+              <span className="card-title">Primeiro Lote</span>
+              <div className="card-number">(Indisponível)</div>
+            </div>
 
-          
+            <div className="bank-card unavailable">
+              <div className="card-header">
+                <span className="circle red"></span>
+                <span className="circle yellow"></span>
+                <span className="circle green"></span>
+              </div>
+              <div className="card-img"><img src={lotePromocional} /></div>
+              <span className="card-title">Segundo Lote</span>
+              <div className="card-number">(Indisponível)</div>
+            </div>
+          </div>
+
           <div className="stat-item">
             <h3>+{count}</h3>
             <p>ingressos vendidos</p>
@@ -262,137 +203,133 @@ const App = () => {
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* FEATURES */}
       <section className="features">
         <div className="features-content">
-          <h2 className="features-title">
-            Se você tem 🔞
-          </h2>
-          <div style={{textAlign: 'center'}}>
-          <p >
-           Agora para o controle e bem de vocês, pessoas <br/> menores de 18 anos devem imprimir e levar  a autorização <br/> assinada  pelo responsável para o evento!
+
+          <h2 className="features-title">Se você tem 🔞</h2>
+
+          <p style={{ textAlign: "center" }}>
+            Agora para o controle e bem de vocês, pessoas menores de 18 anos devem
+            imprimir e levar a autorização assinada pelo responsável para o evento!
           </p>
-          </div>
+
           <br />
 
           <div className="features-buttons">
-          <a href="/autoriza.pdf" download className="features-cta">
-            Baixar
-        </a>
-        <button className="features-learn" onClick={() => setOpen(true)}>
-        Ler Sobre
-      </button>
+            <a href="/autoriza.pdf" download className="features-cta">Baixar</a>
 
-       <Modal
-        isOpen={open}
-        onRequestClose={() => setOpen(false)}
-        shouldCloseOnOverlayClick={true}
-        style={{
-          overlay: {
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-            backdropFilter: "blur(5px)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            transition: "0.3s ease-in-out",
-          },
-          content: {
-            width: "450px",
-            maxHeight: "70vh",
-            overflowY: "auto",
-            borderRadius: "18px",
-            padding: "25px",
-            inset: "unset",
-            boxShadow: "0 8px 30px rgba(0,0,0,0.25)",
-            border: "none",
-            animation: "modalIn 0.25s ease",
-          },
-        }}
-      >
-        <h2 style={{ marginBottom: "10px", fontWeight: "600" }}>
-          Informações Importantes
-        </h2>
+            <button className="features-learn" onClick={() => setOpenMenores(true)}>
+              Ler Sobre
+            </button>
 
-        <p style={{ lineHeight: "1.5" }}>
-          Menores de 18 anos precisam de autorização formal dos pais ou
-          responsáveis legais para participar de eventos, fazer cadastros,
-          assinar termos ou realizar qualquer atividade que envolva
-          responsabilidade civil.
-        </p>
+            {/* MODAL — MENORES */}
+            <Modal
+              isOpen={openMenores}
+              onRequestClose={() => setOpenMenores(false)}
+              shouldCloseOnOverlayClick={true}
+              style={{
+                overlay: {
+                  backgroundColor: "rgba(0,0,0,0.5)",
+                  backdropFilter: "blur(6px)",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                },
+                content: {
+                  width: "450px",
+                  maxHeight: "70vh",
+                  overflowY: "auto",
+                  padding: "25px",
+                  borderRadius: "16px",
+                  inset: "unset",
+                  border: "none",
+                  background: "rgba(255,255,255,0.25)",
+                  backdropFilter: "blur(15px)",
+                  WebkitBackdropFilter: "blur(15px)",
+                  color: "white",
+                }
+              }}
+            >
+              <h2>Informações Importantes</h2>
 
-        <p style={{ marginTop: "15px", lineHeight: "1.5" }}>
-          O objetivo desta regra é garantir proteção, segurança e que o menor
-          esteja acompanhado ou autorizado por um responsável legal.
-        </p>
+              <p>
+                Menores de 18 anos precisam de autorização formal dos pais ou responsáveis para participar do evento.
+              </p>
 
-        <p style={{ marginTop: "15px", opacity: 0.8, fontSize: "14px" }}>
-          <strong>Base legal:</strong><br />
-          Estatuto da Criança e do Adolescente (ECA), Lei nº 8.069/1990 —
-          Artigos 4º, 22 e 74.
-        </p>
+              <p style={{ marginTop: "14px" }}>
+                Essa exigência é feita para garantir segurança e responsabilidade.
+              </p>
 
-        <button
-          onClick={() => setOpen(false)}
-          style={{
-            marginTop: "20px",
-            padding: "10px 20px",
-            borderRadius: "10px",
-            border: "none",
-            cursor: "pointer",
-            background: "#111",
-            color: "#fff",
-            fontSize: "15px",
-          }}
-        >
-          Fechar
-        </button>
-      </Modal>
+              <p style={{ marginTop: "14px", opacity: 0.8 }}>
+                <strong>Base legal:</strong><br />
+                Estatuto da Criança e do Adolescente (ECA), Lei 8069/1990 — Art. 4°, 22 e 74.
+              </p>
+
+              <button
+                onClick={() => setOpenMenores(false)}
+                style={{
+                  marginTop: "20px",
+                  padding: "10px 20px",
+                  background: "rgba(0,0,0,0.7)",
+                  border: "none",
+                  borderRadius: "12px",
+                  color: "white",
+                  cursor: "pointer",
+                }}
+              >
+                Fechar
+              </button>
+            </Modal>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      {/* DJs */}
       <section className="services">
         <div className="services-grid">
+
           <div className="service-card">
             <div className="service-icon protection">
-              <img src={dj1} alt="" srcset="" id='divulgacao'/>
+              <img src={dj1} id="divulgacao" />
             </div>
             <h3>DJ 1</h3>
             <p>Em breve será divulgado!</p>
           </div>
-          
+
           <div className="service-card">
             <div className="service-icon tracking">
-            <img src={dj2} alt="" srcset="" id='divulgacao'/>
-
+              <img src={dj2} id="divulgacao" />
             </div>
-            <h3>Dj 2 </h3>
+            <h3>DJ 2</h3>
             <p>Em breve será divulgado!</p>
           </div>
-          
+
           <div className="service-card">
             <div className="service-icon flexibility">
-            <img src={atracao} alt="" srcset="" id='divulgacao'/>
+              <img src={atracao} id="divulgacao" />
             </div>
-            <h3>Atrações </h3>
+            <h3>Atrações</h3>
             <p>Em breve divulgado!</p>
           </div>
-          
+
           <div className="service-card">
             <div className="service-icon delivery">
-            <img src={atracaoDois} alt="" srcset="" id='divulgacao'/>
+              <img src={atracaoDois} id="divulgacao" />
             </div>
-            <h3>Atrações </h3>
+            <h3>Atrações</h3>
             <p>Em breve divulgado!</p>
           </div>
+
         </div>
       </section>
-<br />
 
-  <h1 style={{textAlign: "center"}}>Palco 360!</h1>
-  <Palco3d />
-  <Footer />
+      <br />
+
+      <h1 style={{ textAlign: "center" }}>Palco 360!</h1>
+      <Palco3d />
+
+      <Footer />
     </div>
   );
 };
