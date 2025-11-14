@@ -197,7 +197,10 @@ const App = () => {
           </div>
 
           <div className="stat-item">
-            <h3>+{count}</h3>
+          <p className="contador notranslate" translate="no">
+              {ingressosVendidos}
+            </p>
+
             <p>ingressos vendidos</p>
           </div>
         </div>
