@@ -329,7 +329,7 @@ const App = () => {
 
       <br />
 
-      <h1 style={{ textAlign: "center" }}>Palco 360!</h1>
+      <h1 style={{ textAlign: "center" }}>Palco Profissional!</h1>
       <Palco3d />
 
       <Footer />
