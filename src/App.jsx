@@ -170,7 +170,7 @@ const App = () => {
               <div className="card-img"><img src={lotePromocional} /></div>
               <span className="card-title">Lote Promocional</span>
               <div className="card-number">(Disponível)</div>
-              <button className="buy-btn">Comprar</button>
+              <button className="buy-btn">EM BREVE!</button>
             </div>
 
             <div className="bank-card unavailable">
