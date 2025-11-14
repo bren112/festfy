@@ -3,12 +3,17 @@ import './App.css';
 import logo from './logo.png'
 import Header from './components/Header/Header';
 import lotePromocional from './images/lotePromocional.png'
-
+import Modal from "react-modal";
+import dj1 from "./images/dj1.png"
+import dj2 from "./images/dj2.png"
+import atracao from "./images/misterio.png"
+import atracaoDois from "./images/misteriof.png"
+Modal.setAppElement("#root");
 const App = () => {
-    
+  const [open, setOpen] = useState(false);
   const [count, setCount] = useState(0);
   const target = 1000; // número final
-  const duration = 2000; // duração da animação em ms
+  const duration = 3000; // duração da animação em ms
 
   useEffect(() => {
     let start = 0;
@@ -39,10 +44,10 @@ const App = () => {
       <section className="hero">
         <div className="hero-content">
           <h1 className="hero-title">
-           Mais uma festa nossa!  
+           Mais uma festa da Diretoria!  
           </h1>
           <p className="hero-subtitle">
-            Money should be easy. It's time to say goodbye to banks & financial services companies that don't work for you
+          Uma experiência única feita para quem gosta de exclusividade, organização e zero complicação.
           </p>
           <button className="hero-cta">
             Digitize Now
@@ -118,15 +123,85 @@ const App = () => {
           <h2 className="features-title">
             Se você tem 🔞
           </h2>
-          <p style={{textAlign: 'center'}}>
-           Agora para o controle e bem de vocês, pessoas <br/> de menores devem imprimir e levar a autorização assinada!
+          <div style={{textAlign: 'center'}}>
+          <p >
+           Agora para o controle e bem de vocês, pessoas <br/> menores de 18 anos devem imprimir e levar  a autorização <br/> assinada  pelo responsável para o evento!
           </p>
-
+          </div>
           <br />
 
           <div className="features-buttons">
-            <button className="features-cta">Get Started</button>
-            <button className="features-learn">Learn More</button>
+          <a href="/autoriza.pdf" download className="features-cta">
+            Baixar
+        </a>
+        <button className="features-learn" onClick={() => setOpen(true)}>
+        Ler Sobre
+      </button>
+
+       <Modal
+        isOpen={open}
+        onRequestClose={() => setOpen(false)}
+        shouldCloseOnOverlayClick={true}
+        style={{
+          overlay: {
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            backdropFilter: "blur(5px)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            transition: "0.3s ease-in-out",
+          },
+          content: {
+            width: "450px",
+            maxHeight: "70vh",
+            overflowY: "auto",
+            borderRadius: "18px",
+            padding: "25px",
+            inset: "unset",
+            boxShadow: "0 8px 30px rgba(0,0,0,0.25)",
+            border: "none",
+            animation: "modalIn 0.25s ease",
+          },
+        }}
+      >
+        <h2 style={{ marginBottom: "10px", fontWeight: "600" }}>
+          Informações Importantes
+        </h2>
+
+        <p style={{ lineHeight: "1.5" }}>
+          Menores de 18 anos precisam de autorização formal dos pais ou
+          responsáveis legais para participar de eventos, fazer cadastros,
+          assinar termos ou realizar qualquer atividade que envolva
+          responsabilidade civil.
+        </p>
+
+        <p style={{ marginTop: "15px", lineHeight: "1.5" }}>
+          O objetivo desta regra é garantir proteção, segurança e que o menor
+          esteja acompanhado ou autorizado por um responsável legal.
+        </p>
+
+        <p style={{ marginTop: "15px", opacity: 0.8, fontSize: "14px" }}>
+          <strong>Base legal:</strong><br />
+          Estatuto da Criança e do Adolescente (ECA), Lei nº 8.069/1990 —
+          Artigos 4º, 22 e 74.
+        </p>
+
+        <button
+          onClick={() => setOpen(false)}
+          style={{
+            marginTop: "20px",
+            padding: "10px 20px",
+            borderRadius: "10px",
+            border: "none",
+            cursor: "pointer",
+            background: "#111",
+            color: "#fff",
+            fontSize: "15px",
+          }}
+        >
+          Fechar
+        </button>
+      </Modal>
           </div>
         </div>
       </section>
@@ -135,27 +210,36 @@ const App = () => {
       <section className="services">
         <div className="services-grid">
           <div className="service-card">
-            <div className="service-icon protection"></div>
-            <h3>Protection</h3>
-            <p>Data protection guarantees</p>
+            <div className="service-icon protection">
+              <img src={dj1} alt="" srcset="" id='divulgacao'/>
+            </div>
+            <h3>DJ 1</h3>
+            <p>Em breve será divulgado!</p>
           </div>
           
           <div className="service-card">
-            <div className="service-icon tracking"></div>
-            <h3>Tracking</h3>
-            <p>Track all your financial transactions</p>
+            <div className="service-icon tracking">
+            <img src={dj2} alt="" srcset="" id='divulgacao'/>
+
+            </div>
+            <h3>Dj 2 </h3>
+            <p>Em breve será divulgado!</p>
           </div>
           
           <div className="service-card">
-            <div className="service-icon flexibility"></div>
-            <h3>Flexibility</h3>
-            <p>Eashless</p>
+            <div className="service-icon flexibility">
+            <img src={atracao} alt="" srcset="" id='divulgacao'/>
+            </div>
+            <h3>Atrações </h3>
+            <p>Em breve divulgado!</p>
           </div>
           
           <div className="service-card">
-            <div className="service-icon delivery"></div>
-            <h3>Delivery through multiple channels</h3>
-            <p>Feel free to transact anywhere, anytime</p>
+            <div className="service-icon delivery">
+            <img src={atracaoDois} alt="" srcset="" id='divulgacao'/>
+            </div>
+            <h3>Atrações </h3>
+            <p>Em breve divulgado!</p>
           </div>
         </div>
       </section>
