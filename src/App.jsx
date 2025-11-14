@@ -8,6 +8,9 @@ import dj1 from "./images/dj1.png"
 import dj2 from "./images/dj2.png"
 import atracao from "./images/misterio.png"
 import atracaoDois from "./images/misteriof.png"
+import Palco3d from './components/3d/Palco';
+import Footer from './components/Footer/Footer';
+// import About from './components/About/About';
 Modal.setAppElement("#root");
 const App = () => {
   const [open, setOpen] = useState(false);
@@ -385,29 +388,11 @@ const App = () => {
           </div>
         </div>
       </section>
+<br />
 
-      {/* About Section */}
-      <section className="about">
-        <div className="about-content">
-          <h2 className="about-title">About Us</h2>
-          <p className="about-subtitle">Get to know more about carty</p>
-          <p className="about-description">
-            We are customer-focused digital bank that provides complete financial solutions to meet your entire financial needs
-          </p>
-          
-          <div className="about-stats">
-            <div className="about-stat">
-              <h3>243K</h3>
-            </div>
-            <div className="about-stat">
-              <h3>480M</h3>
-            </div>
-            <div className="about-stat">
-              <h3>267%</h3>
-            </div>
-          </div>
-        </div>
-      </section>
+  <h1 style={{textAlign: "center"}}>Palco 360!</h1>
+  <Palco3d />
+  <Footer />
     </div>
   );
 };
