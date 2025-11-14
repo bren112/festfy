@@ -49,9 +49,151 @@ const App = () => {
           <p className="hero-subtitle">
           Uma experiência única feita para quem gosta de exclusividade, organização e zero complicação.
           </p>
-          <button className="hero-cta">
-            Digitize Now
-          </button>
+          <Modal
+  isOpen={open}
+  onRequestClose={() => setOpen(false)}
+  shouldCloseOnOverlayClick={true}
+  style={{
+    overlay: {
+      backgroundColor: "rgba(0,0,0,0.5)",
+      backdropFilter: "blur(8px)",
+      WebkitBackdropFilter: "blur(8px)",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      transition: "0.3s ease-in-out",
+      zIndex: 9999
+    },
+
+    content: {
+      width: "520px",
+      maxWidth: "92%",
+      maxHeight: "75vh",
+      overflowY: "auto",
+      inset: "unset",
+      padding: "0",
+      borderRadius: "22px",
+      border: "1px solid rgba(255,255,255,0.25)",
+
+      /* LIQUID GLASS */
+      background: "rgba(255, 255, 255, 0.22)",
+      backdropFilter: "blur(35px) saturate(180%)",
+      WebkitBackdropFilter: "blur(35px) saturate(180%)",
+
+      boxShadow:
+        "inset 0 0 40px rgba(255,255,255,0.25), inset 0 0 120px rgba(255,255,255,0.08), 0 8px 35px rgba(0,0,0,0.35)",
+      animation: "modalIn 0.25s ease"
+    }
+  }}
+>
+  {/* HEADER COM AS BOLINHAS APPLE */}
+  <div
+    style={{
+      display: "flex",
+      gap: "8px",
+      padding: "14px 18px",
+      borderBottom: "1px solid rgba(255,255,255,0.18)",
+      alignItems: "center"
+    }}
+  >
+    {/* bolinhas */}
+    <div style={{
+      width: "14px",
+      height: "14px",
+      borderRadius: "50%",
+      background: "#FF5F57",
+      boxShadow: "0 0 6px rgba(255,95,87,0.6)"
+    }}></div>
+
+    <div style={{
+      width: "14px",
+      height: "14px",
+      borderRadius: "50%",
+      background: "#FFBD2E",
+      boxShadow: "0 0 6px rgba(255,189,46,0.6)"
+    }}></div>
+
+    <div style={{
+      width: "14px",
+      height: "14px",
+      borderRadius: "50%",
+      background: "#28C840",
+      boxShadow: "0 0 6px rgba(40,200,64,0.6)"
+    }}></div>
+  </div>
+
+  <div style={{ padding: "30px", color: "white" }}>
+    {/* TITULO BRANCO */}
+    <h2
+      style={{
+        marginBottom: "12px",
+        fontWeight: "700",
+        fontSize: "22px",
+        textAlign: "center",
+        color: "white"
+      }}
+    >
+      Sobre este Evento
+    </h2>
+
+    <p style={{ lineHeight: "1.6", fontSize: "15px" }}>
+      Este evento foi planejado para oferecer uma experiência única, segura e
+      organizada — mantendo a tradição das festas da Diretoria.
+      <br /><br />
+      Local: <strong>Divulgado em breve</strong>.
+      <br />
+      Horário: <strong>A confirmar</strong>.
+    </p>
+
+    <br />
+
+    <h3 style={{ fontWeight: "600", marginBottom: "8px", color: "white" }}>
+      Regras Gerais
+    </h3>
+
+    <ul style={{ listStyle: "disc", paddingLeft: "20px", lineHeight: "1.6" }}>
+      <li>É proibida a entrada com bebidas.</li>
+      <li>É obrigatória a apresentação de documento com foto.</li>
+      <li>Respeite as orientações da equipe de segurança.</li>
+      <li>Proibido som externo dentro do evento.</li>
+    </ul>
+
+    <br />
+
+    <h3 style={{ fontWeight: "600", marginBottom: "8px", color: "white" }}>
+      Menores de Idade
+    </h3>
+
+    <p style={{ lineHeight: "1.6", fontSize: "15px" }}>
+      Pessoas menores de 18 anos devem apresentar a autorização assinada pelo
+      responsável legal para entrar no evento.
+      <br /><br />
+    
+    </p>
+
+    <br />
+
+    <button
+      onClick={() => setOpen(false)}
+      style={{
+        marginTop: "10px",
+        width: "100%",
+        padding: "14px",
+        borderRadius: "14px",
+        background: "rgba(255, 255, 255, 0.3)",
+        color: "white",
+        fontWeight: "600",
+        border: "none",
+        cursor: "pointer",
+        fontSize: "15px",
+        backdropFilter: "blur(10px)"
+      }}
+    >
+      Fechar
+    </button>
+  </div>
+</Modal>
+
         </div>
       </section>
 
