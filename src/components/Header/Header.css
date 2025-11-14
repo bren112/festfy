@@ -1,0 +1,114 @@
+/* HeaderApple.css */
+.apple-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 52px;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  -webkit-app-region: drag;
+}
+
+.apple-header-content {
+  width: 100%;
+  max-width: 980px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 20px;
+}
+
+/* Bolinhas macOS - posição absoluta no canto esquerdo */
+.window-controls {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 8px;
+  -webkit-app-region: no-drag;
+}
+
+.control-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.control-btn.close {
+  background: #ff5f56;
+}
+
+.control-btn.minimize {
+  background: #ffbd2e;
+}
+
+.control-btn.maximize {
+  background: #27c93f;
+}
+
+.control-btn.close:hover {
+  background: #ff6b63;
+}
+
+.control-btn.minimize:hover {
+  background: #ffc93e;
+}
+
+.control-btn.maximize:hover {
+  background: #38da52;
+}
+
+/* Menu central estilo Apple */
+.apple-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-item {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.08px;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* Efeitos de foco igual macOS */
+.control-btn:active {
+  transform: scale(0.95);
+}
+
+/* Garantir que o header tenha o visual nativo do macOS */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .apple-header {
+      background: rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+/* Para garantir a aparência correta em todos os dispositivos */
+.apple-header {
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.05) 50%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    rgba(0, 0, 0, 0.8);
+}
