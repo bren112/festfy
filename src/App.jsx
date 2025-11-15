@@ -106,8 +106,8 @@ const App = () => {
               <p>
                 Este evento foi planejado para oferecer uma experiência única, segura e organizada — mantendo a tradição das festas da Diretoria.
                 <br /><br />
-                Local: <strong>Divulgado em breve</strong><br />
-                Horário: <strong>A confirmar</strong>
+                Local: <strong>Associação Atlética Santa Ritense</strong><br />
+                Horário: <strong>21:00</strong>
               </p>
 
               <br />
@@ -118,6 +118,7 @@ const App = () => {
                 <li>É obrigatória a apresentação de documento com foto.</li>
                 <li>Respeite as orientações da equipe de segurança.</li>
                 <li>Proibido som externo no evento.</li>
+                <li>Proibida a entrada com qualaquer tipo de cigarro ou fumo.</li>
               </ul>
 
               <br />
