@@ -170,9 +170,9 @@ const App = () => {
               </div>
               <div className="card-img"><img src={lotePromocional} /></div>
               <span className="card-title">Lote Promocional</span>
-              <div className="card-number">(Disponível)</div>
-              <br />
-              <a className="buy-btn" href='https://festfy.cloud/pagamento/'>EM BREVE!</a>
+              <div className="card-number">(Indisponível)</div>
+
+            
             </div>
 
             <div className="bank-card unavailable">
@@ -183,7 +183,10 @@ const App = () => {
               </div>
               <div className="card-img"><img src={lotePromocional} /></div>
               <span className="card-title">Primeiro Lote</span>
-              <div className="card-number">(Indisponível)</div>
+              <div className="card-number">(Disponível)</div>
+
+              <br />
+              <a className="buy-btn" href='https://festfy.cloud/pagamento/'>EM BREVE!</a>
             </div>
 
             <div className="bank-card unavailable">
