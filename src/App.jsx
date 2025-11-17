@@ -162,7 +162,7 @@ const App = () => {
           {/* Cards */}
           <div className="bank-cards">
             
-            <div className="bank-card available">
+            <div className="bank-card unavailable">
               <div className="card-header">
                 <span className="circle red"></span>
                 <span className="circle yellow"></span>
@@ -175,7 +175,7 @@ const App = () => {
             
             </div>
 
-            <div className="bank-card unavailable">
+            <div className="bank-card available">
               <div className="card-header">
                 <span className="circle red"></span>
                 <span className="circle yellow"></span>
@@ -186,7 +186,7 @@ const App = () => {
               <div className="card-number">(Disponível)</div>
 
               <br />
-              <a className="buy-btn" href='https://festfy.cloud/pagamento/'>EM BREVE!</a>
+              <a className="buy-btn" href='https://festfy.cloud/pagamento/'>ADQUIRIR!</a>
             </div>
 
             <div className="bank-card unavailable">
