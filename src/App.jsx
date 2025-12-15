@@ -3,14 +3,18 @@ import './App.css';
 import logo from './logo.png';
 import Header from './components/Header/Header';
 import lotePromocional from './images/lotePromocional.png';
+import loteEsgotado from './images/esgotado.png';
 import Modal from "react-modal";
-import dj1 from "./images/dj1.png";
-import dj2 from "./images/dj2.png";
-import atracao from "./images/misterio.png";
-import atracaoDois from "./images/misteriof.png";
+// import dj1 from "./images/dj1.png";
+// import dj2 from "./images/dj2.png";
+// import atracao from "./images/misterio.png";
+// import atracaoDois from "./images/misteriof.png";
 import Palco3d from './components/3d/Palco';
 import Footer from './components/Footer/Footer';
-
+import autoriza from "./images/autoriza.pdf"
+import tony from "./images/tony.png"
+import brizzart from "./images/brizzart.png"
+import dalbaz from "./images/dalbaz.png"
 Modal.setAppElement("#root");
 
 const App = () => {
@@ -168,8 +172,21 @@ const App = () => {
                 <span className="circle yellow"></span>
                 <span className="circle green"></span>
               </div>
-              <div className="card-img"><img src={lotePromocional} /></div>
-              <span className="card-title">Lote Promocional</span>
+              <div className="card-img"><img src={loteEsgotado} /></div>
+              <span className="card-title">Primeiro Lote</span>
+              <div className="card-number">(Indisponível)</div>
+
+            
+            </div>
+
+            <div className="bank-card unavailable">
+              <div className="card-header">
+                <span className="circle red"></span>
+                <span className="circle yellow"></span>
+                <span className="circle green"></span>
+              </div>
+              <div className="card-img"><img src={loteEsgotado} /></div>
+              <span className="card-title">Segundo Lote</span>
               <div className="card-number">(Indisponível)</div>
 
             
@@ -182,32 +199,20 @@ const App = () => {
                 <span className="circle green"></span>
               </div>
               <div className="card-img"><img src={lotePromocional} /></div>
-              <span className="card-title">Primeiro Lote</span>
+              <span className="card-title">Terceiro Lote</span>
               <div className="card-number">(Disponível)</div>
-
               <br />
               <a className="buy-btn" href='https://festfy.cloud/pagamento/'>ADQUIRIR!</a>
             </div>
-
-            <div className="bank-card unavailable">
-              <div className="card-header">
-                <span className="circle red"></span>
-                <span className="circle yellow"></span>
-                <span className="circle green"></span>
-              </div>
-              <div className="card-img"><img src={lotePromocional} /></div>
-              <span className="card-title">Segundo Lote</span>
-              <div className="card-number">(Indisponível)</div>
-            </div>
           </div>
 
-          <div className="stat-item">
+          {/* <div className="stat-item">
           <p className="contador notranslate" translate="no">
           +{String(count)}
         </p>
 
             <p>ingressos vendidos</p>
-          </div>
+          </div> */}
         </div>
       </section>
 
@@ -225,7 +230,7 @@ const App = () => {
           <br />
 
           <div className="features-buttons">
-            <a href="/autoriza.pdf" download className="features-cta">Baixar</a>
+            <a href={autoriza} download className="features-cta">Baixar</a>
 
             <button className="features-learn" onClick={() => setOpenMenores(true)}>
               Ler Sobre
@@ -299,35 +304,35 @@ const App = () => {
 
           <div className="service-card">
             <div className="service-icon protection">
-              <img src={dj1} id="divulgacao" />
+              <img src={tony} id="divulgacao" />
             </div>
-            <h3>DJ 1</h3>
-            <p>Em breve será divulgado!</p>
+            <h3>DJ TONY</h3>
+            {/* <p>Em breve será divulgado!</p> */}
           </div>
 
           <div className="service-card">
             <div className="service-icon tracking">
-              <img src={dj2} id="divulgacao" />
+              <img src={brizzart} id="divulgacao" />
             </div>
-            <h3>DJ 2</h3>
-            <p>Em breve será divulgado!</p>
+            <h3>DJ BRIZZART</h3>
+            {/* <p>Em breve será divulgado!</p> */}
           </div>
 
           <div className="service-card">
             <div className="service-icon flexibility">
-              <img src={atracao} id="divulgacao" />
+              <img src={dalbaz} id="divulgacao" />
             </div>
-            <h3>Atrações</h3>
-            <p>Em breve divulgado!</p>
+            <h3>DJ DALBAZ</h3>
+            {/* <p>Em breve divulgado!</p> */}
           </div>
 
-          <div className="service-card">
+          {/* <div className="service-card">
             <div className="service-icon delivery">
               <img src={atracaoDois} id="divulgacao" />
             </div>
             <h3>Atrações</h3>
             <p>Em breve divulgado!</p>
-          </div>
+          </div> */}
 
         </div>
       </section>
