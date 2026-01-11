@@ -1,56 +1,66 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import logo from './logo.png';
+import logo from "./images/logoCarnaval.png";
 import Header from './components/Header/Header';
 import lotePromocional from './images/lotePromocional.png';
 import loteEsgotado from './images/esgotado.png';
 import Modal from "react-modal";
-// import dj1 from "./images/dj1.png";
-// import dj2 from "./images/dj2.png";
-// import atracao from "./images/misterio.png";
-// import atracaoDois from "./images/misteriof.png";
 import Palco3d from './components/3d/Palco';
 import Footer from './components/Footer/Footer';
-import autoriza from "./images/autoriza.pdf"
-import tony from "./images/tony.png"
-import brizzart from "./images/brizzart.png"
-import dalbaz from "./images/dalbaz.png"
+import autoriza from "./images/autoriza.pdf";
+import atracao from "./images/atraCarnaval.png";
+import Confetti from 'react-confetti';
+
 Modal.setAppElement("#root");
 
 const App = () => {
   const [openAbout, setOpenAbout] = useState(false);
   const [openMenores, setOpenMenores] = useState(false);
 
-  const [count, setCount] = useState(0);
-  const target = 1000;
-  const duration = 3000;
+  const [windowDimension, setWindowDimension] = useState({ 
+    width: window.innerWidth, 
+    height: window.innerHeight 
+  });
+
+  const detectSize = () => {
+    setWindowDimension({ 
+      width: window.innerWidth, 
+      height: window.innerHeight 
+    });
+  }
 
   useEffect(() => {
-    let start = 0;
-    const stepTime = Math.abs(Math.floor(duration / target));
-    const interval = setInterval(() => {
-      start += 1;
-      if (start >= target) {
-        start = target;
-        clearInterval(interval);
-      }
-      setCount(start);
-    }, stepTime);
-    return () => clearInterval(interval);
+    window.addEventListener('resize', detectSize);
+    return () => {
+      window.removeEventListener('resize', detectSize);
+    }
   }, []);
 
   return (
-    <div className="app">
+    <div className="app" style={{ position: 'relative', overflowX: 'hidden' }}>
+      
+      <Confetti
+        width={windowDimension.width}
+        height={windowDimension.height}
+        numberOfPieces={80}
+        gravity={0.03}
+        colors={['#A855F7', '#FF8C00', '#FFD700', '#EC4899', '#00BFFF']}
+        style={{ 
+          position: 'fixed', 
+          top: 0, 
+          left: 0, 
+          zIndex: -1
+        }} 
+      />
 
       <Header />
 
       <br /><br /><br />
 
       <div className="logoCenter">
-        <img src={logo} alt="" />
+        <img src={logo} alt="Logo Carnaval" />
       </div>
 
-      {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-content">
           <h1 className="hero-title">
@@ -65,7 +75,6 @@ const App = () => {
             Sobre esse evento
           </button>
 
-          {/* MODAL — SOBRE O EVENTO */}
           <Modal
             isOpen={openAbout}
             onRequestClose={() => setOpenAbout(false)}
@@ -77,6 +86,7 @@ const App = () => {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                zIndex: 1000
               },
               content: {
                 width: "520px",
@@ -94,8 +104,6 @@ const App = () => {
               }
             }}
           >
-
-            {/* Header Apple Style */}
             <div style={{ display: "flex", gap: "8px", padding: "14px 18px", borderBottom: "1px solid rgba(255,255,255,0.18)" }}>
               <div style={{ width: "14px", height: "14px", borderRadius: "50%", background: "#FF5F57" }}></div>
               <div style={{ width: "14px", height: "14px", borderRadius: "50%", background: "#FFBD2E" }}></div>
@@ -122,7 +130,7 @@ const App = () => {
                 <li>É obrigatória a apresentação de documento com foto.</li>
                 <li>Respeite as orientações da equipe de segurança.</li>
                 <li>Proibido som externo no evento.</li>
-                <li>Proibida a entrada com qualaquer tipo de cigarro ou fumo.</li>
+                <li>Proibida a entrada com qualquer tipo de cigarro ou fumo.</li>
               </ul>
 
               <br />
@@ -155,68 +163,53 @@ const App = () => {
         </div>
       </section>
 
-      {/* STATS */}
       <section className="stats">
         <div className="stats-content">
           <div className="stat-item">
             <h3>2023</h3>
-            <p>+2 anos de histórias</p>
+            <p>+3 anos de histórias</p>
           </div>
 
-          {/* Cards */}
           <div className="bank-cards">
             
-            <div className="bank-card unavailable">
-              <div className="card-header">
-                <span className="circle red"></span>
-                <span className="circle yellow"></span>
-                <span className="circle green"></span>
-              </div>
-              <div className="card-img"><img src={loteEsgotado} /></div>
-              <span className="card-title">Primeiro Lote</span>
-              <div className="card-number">(Indisponível)</div>
-
-            
-            </div>
-
-            <div className="bank-card unavailable">
-              <div className="card-header">
-                <span className="circle red"></span>
-                <span className="circle yellow"></span>
-                <span className="circle green"></span>
-              </div>
-              <div className="card-img"><img src={loteEsgotado} /></div>
-              <span className="card-title">Segundo Lote</span>
-              <div className="card-number">(Indisponível)</div>
-
-            
-            </div>
-
             <div className="bank-card available">
               <div className="card-header">
                 <span className="circle red"></span>
                 <span className="circle yellow"></span>
                 <span className="circle green"></span>
               </div>
-              <div className="card-img"><img src={lotePromocional} /></div>
-              <span className="card-title">Terceiro Lote</span>
+              <div className="card-img"><img src={lotePromocional} alt="Lote Promocional" /></div>
+              <span className="card-title">Lote Promocional</span>
               <div className="card-number">(Disponível)</div>
-              <br />
+                <br />
               <a className="buy-btn" href='https://festfy.cloud/pagamento/'>ADQUIRIR!</a>
             </div>
+
+            <div className="bank-card unavailable">
+              <div className="card-header">
+                <span className="circle red"></span>
+                <span className="circle yellow"></span>
+                <span className="circle green"></span>
+              </div>
+              <div className="card-img"><img src={lotePromocional} alt="Primeiro Lote" /></div>
+              <span className="card-title">Primeiro Lote</span>
+              <div className="card-number">(Indisponível)</div>
+            </div>
+
+            <div className="bank-card unavailable">
+              <div className="card-header">
+                <span className="circle red"></span>
+                <span className="circle yellow"></span>
+                <span className="circle green"></span>
+              </div>
+              <div className="card-img"><img src={lotePromocional} alt="Segundo Lote" /></div>
+              <span className="card-title">Segundo Lote</span>
+              <div className="card-number">(Indisponível)</div>
+            </div>
           </div>
-
-          {/* <div className="stat-item">
-          <p className="contador notranslate" translate="no">
-          +{String(count)}
-        </p>
-
-            <p>ingressos vendidos</p>
-          </div> */}
         </div>
       </section>
 
-      {/* FEATURES */}
       <section className="features">
         <div className="features-content">
 
@@ -236,7 +229,6 @@ const App = () => {
               Ler Sobre
             </button>
 
-            {/* MODAL — MENORES */}
             <Modal
               isOpen={openMenores}
               onRequestClose={() => setOpenMenores(false)}
@@ -248,6 +240,7 @@ const App = () => {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
+                  zIndex: 1000
                 },
                 content: {
                   width: "450px",
@@ -265,20 +258,12 @@ const App = () => {
               }}
             >
               <h2>Informações Importantes</h2>
-
-              <p>
-                Menores de 18 anos precisam de autorização formal dos pais ou responsáveis para participar do evento.
-              </p>
-
-              <p style={{ marginTop: "14px" }}>
-                Essa exigência é feita para garantir segurança e responsabilidade.
-              </p>
-
+              <p>Menores de 18 anos precisam de autorização formal dos pais ou responsáveis para participar do evento.</p>
+              <p style={{ marginTop: "14px" }}>Essa exigência é feita para garantir segurança e responsabilidade.</p>
               <p style={{ marginTop: "14px", opacity: 0.8 }}>
                 <strong>Base legal:</strong><br />
                 Estatuto da Criança e do Adolescente (ECA), Lei 8069/1990 — Art. 4°, 22 e 74.
               </p>
-
               <button
                 onClick={() => setOpenMenores(false)}
                 style={{
@@ -298,42 +283,31 @@ const App = () => {
         </div>
       </section>
 
-      {/* DJs */}
       <section className="services">
         <div className="services-grid">
-
           <div className="service-card">
             <div className="service-icon protection">
-              <img src={tony} id="divulgacao" />
+              <img src={atracao} id="divulgacao" alt="Atração 1" />
             </div>
-            <h3>DJ TONY</h3>
-            {/* <p>Em breve será divulgado!</p> */}
+            <h3>EM BREVE</h3>
+            <p>Em breve será divulgado!</p>
           </div>
 
           <div className="service-card">
             <div className="service-icon tracking">
-              <img src={brizzart} id="divulgacao" />
+              <img src={atracao} id="divulgacao" alt="Atração 2" />
             </div>
-            <h3>DJ BRIZZART</h3>
-            {/* <p>Em breve será divulgado!</p> */}
+            <h3>EM BREVE</h3>
+            <p>Em breve será divulgado!</p>
           </div>
 
           <div className="service-card">
             <div className="service-icon flexibility">
-              <img src={dalbaz} id="divulgacao" />
+              <img src={atracao} id="divulgacao" alt="Atração 3" />
             </div>
-            <h3>DJ DALBAZ</h3>
-            {/* <p>Em breve divulgado!</p> */}
-          </div>
-
-          {/* <div className="service-card">
-            <div className="service-icon delivery">
-              <img src={atracaoDois} id="divulgacao" />
-            </div>
-            <h3>Atrações</h3>
+            <h3>EM BREVE</h3>
             <p>Em breve divulgado!</p>
-          </div> */}
-
+          </div>
         </div>
       </section>
 
