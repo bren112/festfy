@@ -118,7 +118,7 @@ const App = () => {
               <p>
                 Este evento foi planejado para oferecer uma experiência única, segura e organizada — mantendo a tradição das festas da Diretoria.
                 <br /><br />
-                Local: <strong>Associação Atlética Santa Ritense</strong><br />
+                Local: <strong>Mahal Musica Bar (Tambaú)</strong><br />
                 Horário: <strong>21:00</strong>
               </p>
 
